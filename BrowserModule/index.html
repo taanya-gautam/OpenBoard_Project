@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing & Throttling</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        //Debouncing --> rate limiting -> (user events= pause, gap , delay)
+        let count = 0;
+        function work (){
+            console.log("network request" , count);
+            count++;
+        }
+
+        function debounce(work , delay) {
+            let timerID;
+            return function optWorkFun(){
+                clearTimeout(timerID);
+               timerID =  setTimeout(() => {
+                    work();
+                }, delay);
+
+
+            }
+        }
+
+        // Throttling -> rate limiting -> in terms of interval
+        function throttling(work , delay) {
+            let flag = true;
+            return function optWorkFun(){
+                if (flag === true){
+                    work();
+                    flag = false;
+
+                }
+                
+                setTimeout(() => {
+                    flag = true;
+                }, delay);
+
+
+            }
+
+
+        }
+        let optFun = throttling(work , 500);
+       // let optFun = debounce(work , 500);
+
+        let input = document.querySelector("input");
+        input.addEventListener("keydown" , optFun);
+    </script>
+    
+</body>
+</html>
