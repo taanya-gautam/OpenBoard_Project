@@ -23,29 +23,43 @@ body {
 .tools-cont {
     display: flex;
     height: 5rem;
-    width: 60vw;
-    background-color: aqua;
+    width:80vw;
     justify-content: space-around;
+    align-items: center;
     position: absolute;
     top: 2rem;
     left: 10rem;
     background-color:lightgrey ;
-    align-items: center;
+   
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.scale-tools {
+    animation-name: scale-tools;
+    animation-duration: 1s;
+}
+@keyframes scale-tools {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+
+    }
 }
 .tools-cont > * {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
 
 }
 .pencil-tool-cont {
     height:5rem ;
-    width: 8rem;
+    width: 6rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 3px;   
     position: absolute;
     top: 7rem;
     left: 10rem;
+    display: none;
 }
 .pencil-width-cont {
     height: 2rem;
@@ -83,4 +97,19 @@ body {
 }
 .green {
     background-color: green;
+}
+.eraser-tool-cont {
+    height: 2rem;
+    width: 5rem;
+    background-color: lightgray;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 7rem;
+    left: 16rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.eraser-tool-cont input {
+    width: 80%;
 }
