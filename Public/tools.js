@@ -42,7 +42,7 @@ pencil.addEventListener("click" , (e) => {
 eraser.addEventListener("click" , (e) => {
     //true = show erasertools & vice-versa
     eraserFlag = !eraserFlag;
-    if (eraserFlag) eraserToolCont.style.display = "block";   //by default block
+    if (eraserFlag) eraserToolCont.style.display = "flex";   //by default block
     else eraserToolCont.style.display = "none"
 })
 upload.addEventListener("click" , (e) => {

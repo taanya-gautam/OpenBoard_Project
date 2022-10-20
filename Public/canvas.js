@@ -1,4 +1,4 @@
-const { Socket } = require("dgram");
+
 
 let canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
@@ -43,7 +43,7 @@ canvas.addEventListener("mousedown" , (e) => {
         x: e.clientX,
          y: e.clientY
     }
-    Socket.emmit("beginPath" , data)
+    Socket.emmit("beginPath" , data);
     
 })
 canvas.addEventListener("mousemove" , (e) => {
